@@ -26,7 +26,7 @@ The program is split into **modules**, one concern per file. The rule is:
 |------|----------------|
 | `main.c` | Open the device, install signal handlers, run the read loop, detect the exit hotkey, print stats. |
 | `keys.h` / `keys.c` | Layout tables, modifier state machine, keycode → character / `[TOKEN]`. |
-| `logger.h` / `logger.c` | Open the log file, write a timestamped line, flush + close on exit. |
+| `logger.h` / `logger.c` | Open the log file, write a timestamped line, flush on every keystroke + close on exit. |
 | `Makefile` | Build rules: compile each `.c` to `.o`, then link them into `keylogger`. |
 
 ## Build and run

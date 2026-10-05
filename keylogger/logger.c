@@ -20,6 +20,7 @@ void logger_write(long sec, long usec, const char *token) {
     else    snprintf(stamp, sizeof stamp, "%ld", sec);
 
     fprintf(log, "[%s.%03ld] %s\n", stamp, usec / 1000, token);
+    fflush(log);                          /* write through immediately (real-time log) */
 }
 
 void logger_close(void) {
